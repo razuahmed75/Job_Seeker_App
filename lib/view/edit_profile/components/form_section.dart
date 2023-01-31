@@ -24,7 +24,7 @@ class FormSection extends StatelessWidget {
     final _dobController = TextEditingController();
     final _phoneController = TextEditingController();
 
-    final ApiController apiController = Provider.of(context, listen: false);
+    final ApiController apiController = Provider.of(context, listen: true);
 
     // _updateUser() {
     //   String fName = _fnameController.text.trim();

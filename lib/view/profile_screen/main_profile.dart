@@ -1,5 +1,6 @@
 import 'package:assignment/config/dimensions.dart';
 import 'package:assignment/controller/controller.dart';
+import 'package:assignment/services/api_services.dart';
 import 'package:assignment/view/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class _MainProfileState extends State<MainProfile> {
   @override
   Widget build(BuildContext context) {
     ApiController apiController =
-        Provider.of<ApiController>(context, listen: false);
+        Provider.of<ApiController>(context, listen: true);
     return Scaffold(
       appBar: _buildAppbar(apiController.token, context),
       body: MainProfileBody(),
