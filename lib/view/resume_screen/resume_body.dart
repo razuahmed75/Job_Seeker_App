@@ -1,7 +1,9 @@
 import 'dart:ffi';
 
 import 'package:assignment/view/resume_screen/components/column_layout.dart';
+import 'package:assignment/view/resume_screen/components/my_skills.dart';
 import 'package:assignment/view/resume_screen/components/row_layout.dart';
+import 'package:assignment/view/resume_screen/components/transparent_container.dart';
 import 'package:assignment/widgets/big_text.dart';
 import 'package:assignment/widgets/icon_and_text.dart';
 import 'package:assignment/widgets/sized_text.dart';
@@ -239,6 +241,18 @@ class ResumeBody extends StatelessWidget {
               ],
             ),
             SizedBox(height: height(20)),
+
+            // my skills section
+            RowText(text: "My Skills", icon: Icons.add),
+            SizedBox(height: height(10)),
+
+            MySkills(),
+            SizedBox(height: height(20)),
+
+            RowText(text: "My Online Portfoilo", textSize: 12, icon: Icons.add),
+            SizedBox(height: height(12)),
+            SmallText(text: "www.jakariah.com", size: font(12)),
+            SizedBox(height: height(80)),
           ],
         ),
       ),

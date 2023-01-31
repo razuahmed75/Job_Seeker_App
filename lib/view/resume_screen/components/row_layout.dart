@@ -6,14 +6,15 @@ import '../../../widgets/big_text.dart';
 class RowText extends StatelessWidget {
   final String text;
   final IconData? icon;
-  const RowText({super.key, required this.text, this.icon});
+  final double? textSize;
+  const RowText({super.key, required this.text, this.icon, this.textSize});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        BigText(text: text, size: font(16)),
+        BigText(text: text, size: textSize ?? font(16)),
         Container(
           padding: EdgeInsets.all(5),
           decoration: BoxDecoration(
