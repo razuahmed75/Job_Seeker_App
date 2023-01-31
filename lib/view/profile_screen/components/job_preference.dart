@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../config/dimensions.dart';
 import '../../../widgets/small_text.dart';
 
-class JobPreference extends StatelessWidget {
-  const JobPreference({super.key});
+class JobPreferences extends StatelessWidget {
+  const JobPreferences({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -7,9 +7,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'main_profile_body.dart';
 
-class MainProfile extends StatelessWidget {
+class MainProfile extends StatefulWidget {
   const MainProfile({super.key});
 
+  @override
+  State<MainProfile> createState() => _MainProfileState();
+}
+
+class _MainProfileState extends State<MainProfile> {
   @override
   Widget build(BuildContext context) {
     ApiController apiController =

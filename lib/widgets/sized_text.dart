@@ -45,7 +45,7 @@ class SizedText extends StatelessWidget {
                     : Container(
                         width: 10,
                         height: 2,
-                        color: Colors.white,
+                        color: Colors.transparent,
                       ),
             ],
           ),

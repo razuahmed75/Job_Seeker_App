@@ -2,18 +2,22 @@ import 'package:assignment/controller/controller.dart';
 import 'package:assignment/view/BottomNavController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 
 import 'view/login_screen.dart';
 
-void main() => runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => ApiController()),
-        ],
-        child: const MyApp(),
-      ),
-    );
+void main() async {
+  await GetStorage.init();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ApiController()),
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

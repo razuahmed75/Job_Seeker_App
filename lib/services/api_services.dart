@@ -7,12 +7,15 @@ import 'package:assignment/view/profile_screen/main_profile.dart';
 import 'package:assignment/view/verify_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
+import '../key.dart';
 import '../view/BottomNavController.dart';
 
 class ApiServices {
   static var baseUrl = "https://bringin.io/api";
   static var token;
+  final box = GetStorage();
 
   // postOTP
   static Future postOtp(data, context, phoneController) async {
@@ -81,7 +84,9 @@ class ApiServices {
 
     try {
       if (response.statusCode == 200) {
-        Fluttertoast.showToast(msg: "Success");
+        var data = jsonDecode(response.body);
+        print("  updated value is $data");
+        Fluttertoast.showToast(msg: "Successfully updated");
         var routes = MaterialPageRoute(builder: (_) => MainProfile());
 
         Navigator.of(context).push(routes);
@@ -92,38 +97,25 @@ class ApiServices {
   }
 
   // fetch current user profile
-  static List<GetUserData> userData = [];
-  static Future<List<GetUserData>> fetchUserData(context) async {
-    // var result;
 
+  Future fetchUserData(context) async {
     final url = Uri.parse(baseUrl + "/getSeekerInfo");
     final headers = {
       'Authorization': 'Bearer $token',
     };
 
-    final response = await http.get(
+    final res = await http.get(
       url,
       headers: headers,
     );
 
-    try {
-      if (response.statusCode == 200) {
-        var data = jsonDecode(response.body);
+    var response;
+    if (res.statusCode == 200) {
+      response = jsonDecode(res.body);
 
-        for (var i in data) {
-          userData.add(GetUserData.fromJson(data));
-        }
-        print(userData);
-
-        Fluttertoast.showToast(msg: "Success");
-        var routes = MaterialPageRoute(builder: (_) => MainProfile());
-
-        Navigator.of(context).push(routes);
-        return userData;
-      }
-    } catch (e) {
-      log(e.toString());
+      GetUserData getUserData = GetUserData.fromJson(response["data"]);
+      print("name is ${getUserData.name}");
+      box.write(Keys.name, getUserData.name);
     }
-    return userData;
   }
 }

@@ -1,5 +1,4 @@
 import 'package:assignment/config/dimensions.dart';
-import 'package:assignment/services/api_services.dart';
 import 'package:assignment/view/profile_screen/components/footer_section.dart';
 import 'package:assignment/view/profile_screen/components/job_preference.dart';
 import 'package:assignment/view/profile_screen/components/approval_status.dart';
@@ -38,32 +37,12 @@ class MainProfileBody extends StatelessWidget {
             SizedBox(height: height(18)),
 
             // job preferences
-            JobPreference(),
+            JobPreferences(),
             SizedBox(height: height(44)),
 
             // footer section
             FooterSection(),
             SizedBox(height: height(20)),
-
-            Container(
-              height: 100,
-              child: FutureBuilder(
-                  future: ApiServices.fetchUserData(context),
-                  builder: (_, snapshot) {
-                    if (!snapshot.hasData) {
-                      return Text("loading");
-                    }
-                    return ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (_, index) {
-                          var datas = snapshot.data;
-                          return Text(
-                            datas![index].name.toString(),
-                            style: TextStyle(color: Colors.black),
-                          );
-                        });
-                  }),
-            ),
           ],
         ),
       ),

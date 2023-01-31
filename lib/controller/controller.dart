@@ -1,5 +1,4 @@
 import 'package:assignment/model/candidate_model.dart';
-import 'package:assignment/model/profile_model.dart';
 import 'package:assignment/services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -36,13 +35,13 @@ class ApiController extends ChangeNotifier {
   }
 
   // updata current user infromation
-  Future<void> updataUser(body, context) async {
-    _isLoading = true;
-    await ApiServices.updateCurrentUser(body, context);
-    _isLoading = false;
+  // Future<void> updataUser(body, context) async {
+  //   _isLoading = true;
+  //   await ApiServices.updateCurrentUser(body, context);
+  //   _isLoading = false;
 
-    notifyListeners();
-  }
+  //   notifyListeners();
+  // }
 
   // fetch data of current user
   // GetUserData? userData;

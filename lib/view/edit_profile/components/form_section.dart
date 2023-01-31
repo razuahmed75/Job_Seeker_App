@@ -1,5 +1,6 @@
 import 'package:assignment/controller/controller.dart';
 import 'package:assignment/model/profile_model.dart';
+import 'package:assignment/services/api_services.dart';
 import 'package:assignment/view/profile_screen/main_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
@@ -25,29 +26,29 @@ class FormSection extends StatelessWidget {
 
     final ApiController apiController = Provider.of(context, listen: false);
 
-    _updateUser() {
-      String fName = _fnameController.text.trim();
-      String lName = _lnameController.text.trim();
-      String gender = _genderController.text.trim();
-      String exp = _expController.text.trim();
-      String work = _workController.text.trim();
-      String dob = _dobController.text.trim();
-      String phn = _phoneController.text.trim();
+    // _updateUser() {
+    //   String fName = _fnameController.text.trim();
+    //   String lName = _lnameController.text.trim();
+    //   String gender = _genderController.text.trim();
+    //   String exp = _expController.text.trim();
+    //   String work = _workController.text.trim();
+    //   String dob = _dobController.text.trim();
+    //   String phn = _phoneController.text.trim();
 
-      apiController.updataUser({
-        "firstName": fName,
-        "lastName": lName,
-        "gender": gender,
-        // "photo": "",
-        // "portfolioURL": "",
-        "educationLevel": exp,
-        "DOB": dob,
-        // "bio": "",
-        "isExperience": true,
-        "skills": "Dart,Flutter",
-        "greeting": "Welcome",
-      }, context);
-    }
+    //   apiController.updataUser({
+    //     "firstName": "fName",
+    //     "lastName": "lName",
+    //     "gender": gender,
+    //     // "photo": "",
+    //     // "portfolioURL": "",
+    //     "educationLevel": exp,
+    //     "DOB": dob,
+    //     // "bio": "",
+    //     "isExperience": true,
+    //     "skills": "Dart,Flutter",
+    //     "greeting": "Welcome",
+    //   }, context);
+    // }
 
     // var token = apiController.candidate!.data.token;
     return Padding(
@@ -107,10 +108,13 @@ class FormSection extends StatelessWidget {
                   color: Colors.black,
                   title: "Submit",
                   onPressed: () {
-                    _updateUser();
-                    final route =
-                        MaterialPageRoute(builder: (_) => MainProfile());
-                    Navigator.of(context).push(route);
+                    // _updateUser();
+                    ApiServices.updateCurrentUser({
+                      "firstName": _fnameController.text.trim(),
+                      "lastName": _lnameController.text.trim(),
+                      "gender": _genderController.text.trim(),
+                      "DOB": _dobController.text.trim(),
+                    }, context);
                   }),
 
               SizedBox(height: 20),

@@ -1,3 +1,4 @@
+import 'package:assignment/services/api_services.dart';
 import 'package:assignment/view/job_screen.dart';
 import 'package:assignment/view/message_screen.dart';
 import 'package:assignment/view/profile_screen/main_profile.dart';
@@ -26,7 +27,11 @@ class _BottomNavPageState extends State<BottomNavPage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: GNav(
-            onTabChange: (index) => setState(() => _zeroIndex = index),
+            onTabChange: (index) {
+              setState(() {
+                _zeroIndex = index;
+              });
+            },
             gap: 8,
             color: Colors.black,
             activeColor: Colors.black,

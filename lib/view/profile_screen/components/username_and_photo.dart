@@ -1,10 +1,13 @@
 import 'package:assignment/controller/controller.dart';
+import 'package:assignment/model/profile_model.dart';
 import 'package:assignment/services/api_services.dart';
 import 'package:assignment/view/edit_profile/edit_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 
 import '../../../config/dimensions.dart';
+import '../../../key.dart';
 import '../../../widgets/big_text.dart';
 import '../../../widgets/small_text.dart';
 
@@ -18,14 +21,14 @@ class UserNameAndPHoto extends StatefulWidget {
 class _UserNameAndPHotoState extends State<UserNameAndPHoto> {
   @override
   void initState() {
-    // Provider.of<ApiController>(context, listen: false).getUser(context);
-    ApiServices.fetchUserData(context);
-
+    ApiServices().fetchUserData(context);
     super.initState();
   }
 
+  final box = GetStorage();
   @override
   Widget build(BuildContext context) {
+    print(box.read(Keys.name));
     // final apicontroller = Provider.of<ApiController>(context, listen: false);
     // var data = apicontroller.userData!.name;
     return Row(
@@ -43,7 +46,8 @@ class _UserNameAndPHotoState extends State<UserNameAndPHoto> {
         SizedBox(width: width(31)),
         Column(
           children: [
-            BigText(text: 'Razu ahmed'),
+            // BigText(text: ),
+            BigText(text: box.read(Keys.name).toString()),
             GestureDetector(
               onTap: () {
                 final route =
