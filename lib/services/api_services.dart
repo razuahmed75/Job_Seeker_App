@@ -3,14 +3,14 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:assignment/model/candidate_model.dart';
 import 'package:assignment/model/profile_model.dart';
-import 'package:assignment/view/profile_screen/main_profile.dart';
-import 'package:assignment/view/verify_screen.dart';
+import 'package:assignment/view/bottom_nav/profile_screen/main_profile.dart';
+import 'package:assignment/view/otp/verify_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import '../key.dart';
-import '../view/BottomNavController.dart';
+import '../view/bottom_nav/BottomNavController.dart';
 
 class ApiServices {
   static var baseUrl = "https://bringin.io/api";

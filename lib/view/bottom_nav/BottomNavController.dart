@@ -1,7 +1,7 @@
 import 'package:assignment/services/api_services.dart';
-import 'package:assignment/view/job_screen.dart';
-import 'package:assignment/view/message_screen.dart';
-import 'package:assignment/view/profile_screen/main_profile.dart';
+import 'package:assignment/view/bottom_nav/job_screen/job_screen.dart';
+import 'package:assignment/view/bottom_nav/message_screen/message_screen.dart';
+import 'package:assignment/view/bottom_nav/profile_screen/main_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';

@@ -1,4 +1,4 @@
-import 'package:assignment/view/resume_screen/resume_body.dart';
+import 'package:assignment/view/my_resume_screen/resume_body.dart';
 import 'package:flutter/material.dart';
 
 class ResumeScreen extends StatelessWidget {

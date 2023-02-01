@@ -1,9 +1,9 @@
-import 'package:assignment/view/resume_screen/components/education_qualification.dart';
-import 'package:assignment/view/resume_screen/components/my_skills.dart';
-import 'package:assignment/view/resume_screen/components/row_layout.dart';
-import 'package:assignment/view/resume_screen/components/upload_resume.dart';
-import 'package:assignment/view/resume_screen/components/user_info.dart';
-import 'package:assignment/view/resume_screen/components/work_experience.dart';
+import 'package:assignment/view/my_resume_screen/components/education_qualification.dart';
+import 'package:assignment/view/my_resume_screen/components/my_skills.dart';
+import 'package:assignment/view/my_resume_screen/components/row_layout.dart';
+import 'package:assignment/view/my_resume_screen/components/upload_resume.dart';
+import 'package:assignment/view/my_resume_screen/components/user_info.dart';
+import 'package:assignment/view/my_resume_screen/components/work_experience.dart';
 import 'package:assignment/widgets/icon_and_text.dart';
 import 'package:assignment/widgets/sized_text.dart';
 import 'package:assignment/widgets/small_text.dart';

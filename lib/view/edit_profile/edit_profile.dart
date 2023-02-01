@@ -27,11 +27,14 @@ class EditProfileScreen extends StatelessWidget {
               SizedBox(height: height(40)),
 
               // header text
-              IconAndText(
-                text: "My Profile",
-                onTap: () {
-                  Navigator.pop(context);
-                },
+              Container(
+                padding: EdgeInsets.only(left: width(20)),
+                child: IconAndText(
+                  text: "My Profile",
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ),
               SizedBox(height: height(19)),
 

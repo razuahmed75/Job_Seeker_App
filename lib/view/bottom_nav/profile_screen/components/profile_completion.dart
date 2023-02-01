@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/dimensions.dart';
-import '../../../widgets/small_text.dart';
+import '../../../../config/dimensions.dart';
+import '../../../../widgets/small_text.dart';
 
 class ProfileCompletion extends StatelessWidget {
   const ProfileCompletion({super.key});

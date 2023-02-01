@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets/app_column_widget.dart';
+import '../../../../widgets/app_column_widget.dart';
 
 class UserActivity extends StatelessWidget {
   const UserActivity({super.key});

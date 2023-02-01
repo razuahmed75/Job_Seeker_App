@@ -1,11 +1,11 @@
 import 'package:assignment/controller/controller.dart';
-import 'package:assignment/view/BottomNavController.dart';
+import 'package:assignment/view/bottom_nav/BottomNavController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 
-import 'view/login_screen.dart';
+import 'view/login/login_screen.dart';
 
 void main() async {
   await GetStorage.init();
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: BottomNavPage(),
       // home: apiController.token != null ? LoginScreen() : BottomNavPage(),
     );
   }

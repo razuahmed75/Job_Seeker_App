@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 
-import '../../../config/dimensions.dart';
-import '../../../key.dart';
-import '../../../widgets/big_text.dart';
-import '../../../widgets/small_text.dart';
+import '../../../../config/dimensions.dart';
+import '../../../../key.dart';
+import '../../../../widgets/big_text.dart';
+import '../../../../widgets/small_text.dart';
 
 class UserNameAndPHoto extends StatefulWidget {
   const UserNameAndPHoto({super.key});

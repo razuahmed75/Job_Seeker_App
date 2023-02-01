@@ -1,7 +1,7 @@
 import 'package:assignment/controller/controller.dart';
 import 'package:assignment/model/profile_model.dart';
 import 'package:assignment/services/api_services.dart';
-import 'package:assignment/view/profile_screen/main_profile.dart';
+import 'package:assignment/view/bottom_nav/profile_screen/main_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:provider/provider.dart';

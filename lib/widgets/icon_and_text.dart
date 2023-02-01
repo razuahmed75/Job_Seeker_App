@@ -11,7 +11,6 @@ class IconAndText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: width(20)),
         GestureDetector(
             onTap: onTap, child: Icon(Icons.arrow_back, color: Colors.black)),
         SizedBox(width: width(95)),

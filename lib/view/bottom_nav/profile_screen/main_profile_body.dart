@@ -1,7 +1,7 @@
 import 'package:assignment/config/dimensions.dart';
-import 'package:assignment/view/profile_screen/components/footer_section.dart';
-import 'package:assignment/view/profile_screen/components/job_preference.dart';
-import 'package:assignment/view/profile_screen/components/approval_status.dart';
+import 'package:assignment/view/bottom_nav/profile_screen/components/footer_section.dart';
+import 'package:assignment/view/bottom_nav/profile_screen/components/job_preference.dart';
+import 'package:assignment/view/bottom_nav/profile_screen/components/approval_status.dart';
 import 'package:flutter/material.dart';
 import 'components/profile_completion.dart';
 import 'components/user_activity.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../controller/controller.dart';
-import '../widgets/my_button.dart';
-import '../widgets/my_textfield.dart';
+import '../../controller/controller.dart';
+import '../../widgets/my_button.dart';
+import '../../widgets/my_textfield.dart';
 
 class VerifyScreen extends StatelessWidget {
   final phoneNumber;
