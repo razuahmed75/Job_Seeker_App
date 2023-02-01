@@ -1,10 +1,7 @@
-import 'package:assignment/controller/controller.dart';
-import 'package:assignment/model/profile_model.dart';
 import 'package:assignment/services/api_services.dart';
 import 'package:assignment/view/edit_profile/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../config/dimensions.dart';
 import '../../../../key.dart';
@@ -33,14 +30,27 @@ class _UserNameAndPHotoState extends State<UserNameAndPHoto> {
     // var data = apicontroller.userData!.name;
     return Row(
       children: [
-        Container(
-          height: height(67),
-          width: height(67),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(height(67) / 2),
-            image: DecorationImage(
-                image: AssetImage('assets/images/profile.jpg'),
-                fit: BoxFit.cover),
+        GestureDetector(
+          onTap: () {
+            final route = MaterialPageRoute(
+                builder: (_) => EditProfileScreen(
+                      image: 'assets/images/profile.jpg',
+                      tag: "tag",
+                    ));
+            Navigator.of(context).push(route);
+          },
+          child: Hero(
+            tag: "tag",
+            child: Container(
+              height: height(67),
+              width: height(67),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(height(67) / 2),
+                image: DecorationImage(
+                    image: AssetImage('assets/images/profile.jpg'),
+                    fit: BoxFit.cover),
+              ),
+            ),
           ),
         ),
         SizedBox(width: width(31)),
@@ -50,8 +60,11 @@ class _UserNameAndPHotoState extends State<UserNameAndPHoto> {
             BigText(text: box.read(Keys.name).toString()),
             GestureDetector(
               onTap: () {
-                final route =
-                    MaterialPageRoute(builder: (_) => EditProfileScreen());
+                final route = MaterialPageRoute(
+                    builder: (_) => EditProfileScreen(
+                          image: 'assets/images/profile.jpg',
+                          tag: "tag",
+                        ));
                 Navigator.of(context).push(route);
               },
               child: Row(

@@ -10,7 +10,9 @@ import 'package:provider/provider.dart';
 import '../../controller/controller.dart';
 
 class EditProfileScreen extends StatelessWidget {
-  const EditProfileScreen({super.key});
+  final image;
+  final tag;
+  const EditProfileScreen({super.key, this.image, this.tag});
 
   @override
   Widget build(BuildContext context) {
@@ -93,17 +95,20 @@ class EditProfileScreen extends StatelessWidget {
                       img,
                     )),
               ))
-          : Container(
-              width: height(67),
-              height: height(67),
-              padding: EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade700,
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/profile.jpg"),
-                    fit: BoxFit.cover,
-                  )),
+          : Hero(
+              tag: tag,
+              child: Container(
+                width: height(67),
+                height: height(67),
+                padding: EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                    color: Colors.grey.shade700,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.cover,
+                    )),
+              ),
             ),
       // child: Container(
       //   width: height(67),
