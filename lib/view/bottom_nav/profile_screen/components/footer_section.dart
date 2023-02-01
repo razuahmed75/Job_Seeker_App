@@ -2,9 +2,7 @@ import 'package:assignment/config/dimensions.dart';
 import 'package:assignment/view/greeting/greeting.dart';
 import 'package:assignment/view/switch_profile/switch_profile.dart';
 import 'package:assignment/view/upload_resume/upload_resume.dart';
-import 'package:assignment/widgets/big_text.dart';
 import 'package:assignment/widgets/dialog_tile.dart';
-import 'package:assignment/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -52,6 +50,7 @@ class FooterSection extends StatelessWidget {
         context: context,
         builder: (context) => AlertDialog(
               backgroundColor: Colors.transparent,
+              insetPadding: EdgeInsets.zero,
               elevation: 0,
               content: SingleChildScrollView(
                 child: Column(
