@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavPage(),
+      home: LoginScreen(),
       // home: apiController.token != null ? LoginScreen() : BottomNavPage(),
     );
   }
