@@ -4,14 +4,12 @@ class MyButton extends StatelessWidget {
   final Color color;
   final String title;
   final void Function()? onPressed;
-  final bool isLoading;
 
   const MyButton({
     super.key,
     required this.color,
     required this.title,
     required this.onPressed,
-    this.isLoading = false,
   });
 
   @override
@@ -26,14 +24,12 @@ class MyButton extends StatelessWidget {
               disabledForegroundColor: Colors.white.withOpacity(0.7),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12))),
-          onPressed: isLoading ? null : onPressed,
-          child: isLoading
-              ? Center(child: CircularProgressIndicator())
-              : Text(title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ))),
+          onPressed: onPressed,
+          child: Text(title,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ))),
     );
   }
 }
